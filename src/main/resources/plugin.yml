@@ -1,0 +1,6 @@
+name: NanoAPI
+version: '${project.version}'
+main: dev.nanosync.nanoapi.NanoAPI
+api-version: 1.16
+authors: [ Martinfer22 ]
+description: Uma API para disponibilizar métodos para todos plugins realizados para NanoSync
