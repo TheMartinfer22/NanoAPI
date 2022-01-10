@@ -12,6 +12,16 @@ public class Message {
         return this;
     }
 
+    public Message remove(String target){
+        message = message.replace(target, "");
+        return this;
+    }
+
+    public Message placeholder(String string, String target){
+        message = message.replace(string, target);
+        return this;
+    }
+
     public String build(){
         return message;
     }
