@@ -17,8 +17,8 @@ public class Message {
         return this;
     }
 
-    public Message placeholder(String string, String target){
-        message = message.replace(string, target);
+    public Message placeholder(String target, String replacement){
+        message = message.replace(target, replacement);
         return this;
     }
 
