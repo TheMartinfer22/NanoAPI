@@ -1,4 +1,4 @@
-package dev.nanosync.nanoapi.chat;
+    package dev.nanosync.nanoapi.chat;
 
 public class Message {
     private String message;
