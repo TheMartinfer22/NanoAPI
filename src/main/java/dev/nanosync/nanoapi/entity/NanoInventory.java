@@ -8,16 +8,38 @@ import org.bukkit.inventory.ItemStack;
 public class NanoInventory {
     private Inventory inventory;
 
-    public NanoInventory(String owner, int size, String menuName){
+    /**
+     * Construtor responsável por criar um inventário
+     *
+     * @param owner | Dono do menu, deixar com conclhetes se for o servidor.
+     * @param size | Tamanho do menu, 9 ->
+     * @param menuName | Nome do menu
+     */
+    public NanoInventory(String owner, final int size, String menuName){
         this.inventory = Bukkit.createInventory(Bukkit.getPlayer(owner), size, menuName);
         NanoInventoryEvent.addMenu(menuName);
     }
 
-    public NanoInventory addItem(int index, ItemStack itemStack){
+    /**
+     * Responsável por adicionar itens no inventário.
+     *
+     * @param index | Posição do item para ser adicionado
+     * @param itemStack | Item a ser adicionado
+     * @return | Padrão Builder
+     */
+    public NanoInventory addItem(final int index, ItemStack itemStack){
         inventory.setItem(index, itemStack);
         return this;
     }
 
+    /**
+     * todo
+     *
+     * @param index | Posição do item para ser adicionado
+     * @param menuName | Nome do menu a ser adicionado o comando.
+     * @param command | Comando a ser dispachado quando a index for acionada.
+     * @return | Padrão Builder
+     */
     public NanoInventory addActionCommand(int index, String menuName, String command){
         NanoInventoryEvent.addCommandMenu(index, menuName, command);
         return this;
