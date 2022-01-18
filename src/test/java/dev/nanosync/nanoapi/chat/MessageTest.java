@@ -5,27 +5,21 @@ import org.junit.Test;
 
 public class MessageTest {
 
+    private String messageString = "A &cTest for message";
+    private Message message = new Message(messageString);
+
     @Test
     public void returnAColorMessage(){
-        String messageString = "Test &3Color";
-        Message message = new Message(messageString);
-
-        Assert.assertEquals("Test §3Color", message.color().build());
+        Assert.assertEquals("A §cTest for message", message.color().build());
     }
 
     @Test
     public void removeACharOrStringInMessage(){
-        String messageString = "Test remove string";
-        Message message = new Message(messageString);
-
-        Assert.assertEquals("Test string", message.remove("remove ").build());
+        Assert.assertEquals("&cTest for message", message.remove("A ").build());
     }
 
     @Test
     public void canReplaceAStringInMessage(){
-        String messageString = "Test replace string";
-        Message message = new Message(messageString);
-
-        Assert.assertEquals("Test replace message", message.placeholder("string", "message").build());
+        Assert.assertEquals("A &cTest for string", message.placeholder("message", "string").build());
     }
 }
