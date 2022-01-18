@@ -16,8 +16,7 @@ public class DiscordConnector {
 
     @SneakyThrows
     public DiscordConnector(String token, String guildID){
-        jda = JDABuilder.createDefault(token)
-                .build();
+        jda = JDABuilder.createDefault(token).build();
         this.guildID = guildID;
     }
 
