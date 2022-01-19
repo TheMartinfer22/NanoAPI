@@ -1,8 +1,6 @@
 package dev.nanosync.nanoapi.entity;
 
-import be.seeseemelk.mockbukkit.MockBukkit;
-import be.seeseemelk.mockbukkit.ServerMock;
-import dev.nanosync.nanoapi.NanoAPI;
+import dev.nanosync.nanoapi.NanoAPITest;
 import org.bukkit.Bukkit;
 import org.junit.After;
 import org.junit.Assert;
@@ -12,20 +10,14 @@ import org.junit.jupiter.api.Assertions;
 
 public class NanoPlayerTest {
 
-    private ServerMock server;
-    private NanoAPI plugin;
-
     @Before
-    public void setUp() {
-        server = MockBukkit.mock();
-        plugin = MockBukkit.load(NanoAPI.class);
-        server.addPlayer("Dev");
-        server.addPlayer("Martin");
+    public void load(){
+        NanoAPITest.setUp();
     }
 
     @After
-    public void tearDown() {
-        MockBukkit.unmock();
+    public void unload(){
+        NanoAPITest.tearDown();
     }
 
     @Test
