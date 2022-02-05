@@ -12,12 +12,12 @@ public class NanoPlayerTest {
 
     @Before
     public void load(){
-        NanoAPITest.setUp();
+        NanoAPITest.setup();
     }
 
     @After
     public void unload(){
-        NanoAPITest.tearDown();
+        NanoAPITest.shutdown();
     }
 
     @Test
