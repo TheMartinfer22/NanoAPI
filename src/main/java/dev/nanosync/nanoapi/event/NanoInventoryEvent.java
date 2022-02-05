@@ -23,7 +23,8 @@ public class NanoInventoryEvent implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event){
         menusRegistered.forEach(menu -> {
-            if (event.getInventory().getType().getDefaultTitle().equals(menu) && menuCommand.containsKey(menu)){ // If menu is visual then not close
+            if (event.getInventory().getType().getDefaultTitle().startsWith(menu) && menuCommand.containsKey(menu)){ // If menu is visual then not close
+
                 menuSlot.forEach((menuN1, slot) -> {
                     if (event.getSlot() == slot && menuN1.equals(menu)) {
                         menuCommand.forEach((menuN2, command) -> {
